@@ -16,6 +16,7 @@ class GroceryController extends BBSBaseController {
 
   Future getGroceryList() async {
     try {
+      Future.delayed(Duration.zero);
       final resp = await _repository.getGroceryList();
       groceryList = resp;
     } catch (e) {

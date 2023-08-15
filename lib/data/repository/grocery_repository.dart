@@ -7,8 +7,8 @@ import '../categories.dart';
 
 class GroceryRepository {
   Future<List<GroceryItem>> getGroceryList() async {
-    var response = await ApiClient.instanceEC.get('https://flutter-prep-f5f13-default-rtdb.firebaseio.com/');
-    final Map<String, dynamic> listData = json.decode(response.data);
+    var response = await ApiClient.instanceEC.get('https://flutter-prep-f5f13-default-rtdb.firebaseio.com/shopping-list.json');
+    final Map<String, dynamic> listData = response.data;
     final List<GroceryItem> loadedItems = [];
     for (final item in listData.entries) {
       final category = categories.entries
